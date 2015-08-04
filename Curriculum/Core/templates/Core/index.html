@@ -5,6 +5,14 @@
     <title></title>
 </head>
 <body>
-    <p>Hello World !</p>
+    {% for project in all_projects %}
+        <div>
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.description }}</p>
+            <img src="{{ project.image.url }}">
+        </div>
+    {% empty %}
+        <p>No articles.</p>
+    {% endfor %}
 </body>
 </html>

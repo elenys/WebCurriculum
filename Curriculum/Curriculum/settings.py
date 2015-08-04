@@ -34,7 +34,7 @@ ALLOWED_HOSTS = ['*']
 APP_PERSO = (
     'Core',
     'Portfolio',
-    'Presentation',
+    #'Presentation',
 )
 
 INSTALLED_APPS = (
