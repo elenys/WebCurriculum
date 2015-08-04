@@ -6,7 +6,7 @@ class Profile(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     picture = models.ImageField(upload_to='image')
-    intro = models.CharField(max_length=400)
+    intro = models.TextField(max_length=400)
     dob = models.DateField('date of birth')
 
     def __str__(self):
