@@ -25,10 +25,14 @@ SECRET_KEY = 'b31ujosejklq%ddr+=((j_%i+lij=@=q0l-_zlwn_@@3%eso53'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
+
+
+APP_PERSO = (
+)
 
 INSTALLED_APPS = (
     'django.contrib.admin',
@@ -37,7 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-)
+) + APP_PERSO
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -101,6 +105,21 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'statics')
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'medias')
+
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'templates'),
 )
+
+STATICFILES_DIRS = ()
+for a in APP_PERSO:
+    static = os.path.join(os.path.join(BASE_DIR, a),  'statics')
+    template = os.path.join(os.path.join(BASE_DIR, a),  'templates')
+    if os.path.isdir(static):
+        STATICFILES_DIRS = STATICFILES_DIRS + (static,)
+    if os.path.isdir(template):
+        TEMPLATES[0]['DIRS'].append(template)
