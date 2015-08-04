@@ -1,0 +1,37 @@
+<section>
+    <div  class="w3-row-margin">
+        <div class="w3-quarter w3-container"></div>
+        <div class="w3-half w3-container w3-padding-12 w3-card-2">
+            {% if form.valid %}Votre message a bien été envoyé !{% endif %}
+            <form class="w3-container" action="{% url "contact.views.contact" %}" method="post">
+                {% csrf_token %}
+                <div class="w3-group">
+                    <input name="subject" class="w3-input" type="text" style="width:95%" required>
+                    <label class="w3-label">Subject</label>
+                </div>
+                <div class="w3-group">
+                    <input name="sender" class="w3-input" type="email" style="width:95%" required>
+                    <label class="w3-label">Email</label>
+                </div>
+                <div class="w3-group">
+                    <textarea name="message" class="w3-input" style="width:95%" required></textarea>
+                    <label class="w3-label">Message</label>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-quarter">
+                        <label class="w3-checkbox">
+                            <input type="checkbox" name="copy" checked="checked">
+                            <div class="w3-checkmark"></div>
+                            Copie Mail
+                        </label><br>
+                    </div>
+                    <div class="w3-half"></div>
+                </div>
+                <div class="w3-container w3-center">
+                    <input class="w3-btn" type="submit" value="Submit"/>
+                </div>
+            </form>
+        </div>
+        <div class="w3-quarter w3-container"></div>
+    </div>
+</section>
