@@ -1,0 +1,16 @@
+<section class="w3-container w3-card-4">
+    <header>
+        <h1>Presentation</h1>
+    </header>
+    <main>
+        <p>First Name: {{ profile.0.first_name }}</p>
+        <p>Last Name: {{ profile.0.last_name }}</p>
+        <p>Age: {{ profile.0.age }}</p>
+        <aside>
+            <figure>
+                <i src="{{ profile.0.picture.url }}"></i>
+            </figure>
+        </aside>
+        <p>About me: {{ profile.0.intro }}</p>
+    </main>
+</section>
