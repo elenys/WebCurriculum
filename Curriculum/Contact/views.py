@@ -7,7 +7,7 @@ def contact(request):
     form = ContactForm(request.POST)
     if request.method == 'POST':
         if form.is_valid():
-            form.subject = form.cleaned_data['subject']
+            form.name = form.cleaned_data['subject']
             form.message = form.cleaned_data['message']
             form.sender = form.cleaned_data['sender']
             form.copy = form.cleaned_data['cc']
