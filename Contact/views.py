@@ -18,4 +18,4 @@ def contact(request):
             form.valid = True
     else:
         form = ContactForm()
-    return render(request, 'contact/contact.html', {'form': form})
+    return render(request, 'Contact/Contact.html', {'form': form})
