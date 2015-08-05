@@ -113,7 +113,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'statics')
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'medias')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+ADMIN_MEDIA_PREFIX = '/media/admin/'
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'templates'),
