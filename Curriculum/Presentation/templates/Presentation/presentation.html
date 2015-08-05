@@ -1,20 +1,18 @@
-<section class="w3-container w3-card-4">
-    <header class="w3-center">
+<section class="w3-container w3-card-4 w3-padding-12">
+    <header>
         <h1>Presentation</h1>
     </header>
     <main>
-        {% for profile in profiles %}
-        <p>First Name: {{ profile.first_name }}</p>
-        <p>Last Name: {{ profile.last_name }}</p>
-        <p>Age: {{ profile.age }}</p>
-        <aside>
+        <aside class="w3-right">
             <figure>
-                <img src="{{ profile.picture.url }}">
+                <img src="{{ profiles.0.picture.url }}">
             </figure>
         </aside>
-        <p>About me: {{ profile.intro }}</p>
-        {% empty %}
-            <p>No presentations.</p>
-        {% endfor %}
+        <article class="w3-padding-24">
+            <p>First Name: {{ profiles.0.first_name }}</p>
+            <p>Last Name: {{ profiles.0.last_name }}</p>
+            <p>Age: {{ profiles.0.age }}</p>
+            <p>About me: {{ profiles.0.intro }}</p>
+        </article>
     </main>
 </section>

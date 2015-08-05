@@ -8,6 +8,9 @@ class Profile(models.Model):
     picture = models.ImageField(upload_to='image')
     intro = models.TextField(max_length=400)
     dob = models.DateField('date of birth')
+    email = models.CharField(max_length=100)
+    town = models.CharField(max_length=100)
+    phone_nbr = models.CharField(max_length=13)
 
     def __str__(self):
         return self.first_name

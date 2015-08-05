@@ -5,18 +5,17 @@
     <main  class="w3-row">
         <section class="w3-col m5">
             <header>
-                <h3>Adress</h3>
+                <h3>Address</h3>
             </header>
             <main>
-                <p><i class="fa fa-map-marker w3-xlarge"></i>&nbsp;&nbsp;&nbsp;8 rue Rosa Parks, 93450 L'Ile-Saint-Denis</p>
-                <p><i class="fa fa-phone w3-xlarge"></i>&nbsp;&nbsp;+33 650089587</p>
-                <p><i class="fa fa-envelope-o w3-xlarge"></i>&nbsp;&nbsp;bmartins@student.42.fr</p>
+                <p><i class="fa fa-map-marker w3-xlarge"></i>&nbsp;&nbsp;&nbsp;{{ profiles.0.town }}</p>
+                <p><i class="fa fa-phone w3-xlarge"></i>&nbsp;&nbsp;{{ profiles.0.phone_nbr }}</p>
+                <p><i class="fa fa-envelope-o w3-xlarge"></i>&nbsp;&nbsp;{{ profiles.0.email }}</p>
             </main>
         </section>
-
         <section class="w3-col m7">
             {% if form.valid %}Message sent !{% endif %}
-            <form class="w3-container" action="{% url "Core.views.index" %}" method="post">
+            <form class="w3-container" action="{% url 'Core.views.index' %}" method="post">
                 {% csrf_token %}
                 <div class="w3-group">
                     <input name="name" class="w3-input" type="text" style="width:95%" required>
