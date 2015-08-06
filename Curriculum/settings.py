@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 
 
 APP_PERSO = (
+    'Fortytwo',
     'Contact',
     'Presentation',
     'Portfolio',
