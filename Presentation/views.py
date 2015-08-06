@@ -1,7 +1,6 @@
-from django.shortcuts import render
 from Presentation.models import Profile
 
 
-def presentation(request):
+def presentation():
     profiles = Profile.objects.all()
-    return {'profiles': profiles}
+    return profiles
