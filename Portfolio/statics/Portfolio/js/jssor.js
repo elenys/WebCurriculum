@@ -394,7 +394,7 @@ var $Jssor$ = window.$Jssor$ = new function () {
                 // update: for intranet sites and compat view list sites, IE sends
                 // an IE7 User-Agent to the server to be interoperable, and even if
                 // the page requests a later IE version, IE will still report the
-                // IE7 UA to JS. we should be robust to self
+                // IE7 UA to js. we should be robust to self
                 //var docMode = document.documentMode;
                 //if (typeof docMode !== "undefined") {
                 //    _BrowserRuntimeVersion = docMode;

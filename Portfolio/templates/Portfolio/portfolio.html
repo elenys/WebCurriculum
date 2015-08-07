@@ -1,23 +1,24 @@
 {% load static %}
-<section class="w3-container w3-card-4">
+<section class="w3-container w3-red">
     <header>
         <h1>Portfolio</h1>
     </header>
-    <main>
+    <main class="w3-row">
+        {% for project in projects %}
         <div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 600px; height: 300px;">
         <!-- Slides Container -->
             <div u="slides" style="cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 600px; height: 300px;">
-                {% for project in projects %}
-                    <div>
+                    <div class="w3-quarter">
                         <h4>{{ project.name }}</h4>
                         <p>{{ project.description }}</p>
-                        <img class="w3-image w3-small" src="{{ project.image.url }}"/>
+                        <img style="width:50%;" src="{{ project.image.url }}"/>
                     </div>
-                {% empty %}
-                    <div>No projects yet.</div>
-                {% endfor %}
+
             </div>
         </div>
+        {% empty %}
+            <div>No projects yet.</div>
+        {% endfor %}
     </main>
     <script src="{% static "Portfolio/js/jquery-1.9.1.min.js" %}"></script>
     <script src="{% static "Portfolio/js/jssor.slider.mini.js" %}"></script>
